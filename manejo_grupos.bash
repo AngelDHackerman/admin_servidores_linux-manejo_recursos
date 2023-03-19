@@ -30,3 +30,11 @@ sudo chgrp grupo_a_compartir nombre_carpeta
 # ? Agregar a un usuario a otro grupo: 
 
 sudo usermod -aG nombre_del_grupo nombre_del_usuario
+
+
+# ? Agregar permisos especiales: 
+# Si es una carpeta compartida en un grupo especifico,
+# cuando un usuario cree un nuevo archivo el group owner sera el mismo
+# de la carpeta compartida y NO el del user que la creo. 
+
+sudo chmod +s nombre_carpeta 

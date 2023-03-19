@@ -38,3 +38,12 @@ sudo usermod -aG nombre_del_grupo nombre_del_usuario
 # de la carpeta compartida y NO el del user que la creo. 
 
 sudo chmod +s nombre_carpeta 
+
+
+# ? Eliminar a un usuario de un grupo: 
+
+sudo gpasswd -d nombre_usuario nombre_grupo
+
+# ? Eliminar el grupo por completo: 
+
+sudo groupdel nombre_del_grupo

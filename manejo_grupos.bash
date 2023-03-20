@@ -3,7 +3,7 @@
 
 groups # muestra los grupos a los que perteneces. 
 
-# ? Ver que usuarios perteneces a ciertos grupos: 
+# ? Ver que usuarios pertenecen a ciertos grupos: 
 
 getent group nombre_del_grupo
 
@@ -47,3 +47,12 @@ sudo gpasswd -d nombre_usuario nombre_grupo
 # ? Eliminar el grupo por completo: 
 
 sudo groupdel nombre_del_grupo
+
+
+# ? Ver el nombre del grupo que es administrador (los que pueden usar sudo)
+
+sudo cat /etc/sudoers
+
+# ? Modificar los grupos que tienen todos los accesos: 
+
+sudo visudo

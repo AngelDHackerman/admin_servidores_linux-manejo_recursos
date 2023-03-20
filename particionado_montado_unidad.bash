@@ -1,5 +1,7 @@
 
 # Con estos comandos se muestra como particionar y montar unidades de almacenamiento: 
+# Montar y desmontar particiones es como connectar y disconnectar una USB. 
+
 
 # ? Lista las unidades de almacenamiento disponibles: 
 
@@ -54,5 +56,20 @@ sudo mkdir scripts  # Creamos la carpeta donde queremos usar el nuevo espacio
 sudo mount /ruta/nuevo-almacenamiento /carpeta-usar  # e.g: sudo mount /dev/sdb1 /scripts
 
 
+# ? Desmontar una particion: 
+
+sudo umount /ruta/almacenamiento # e.g: sudo umount /dev/sdb1 
 
 
+# ? Volver a montar la parcition 
+
+sudo umount /ruta/almacenamiento /carpeta # e.g: sudo mount /dev/sdb1 /scripts
+
+
+    # ! Montar la particion al inicio del arranque: 
+
+sudo vim /etc/fstab
+
+# Se agrega la particion creada, aqui un ejemplo de como luciria la edicion del archivo: 
+
+/dev/sdb1   /scripts    ext4    defaults    0     0

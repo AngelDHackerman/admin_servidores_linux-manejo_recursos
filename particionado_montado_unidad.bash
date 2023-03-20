@@ -9,9 +9,9 @@ lsblk
 
 sudo fdisk -l 
 
-# ? Acceder al disco de almacenamiento: 
+# ? Acceder al nuevo disco de almacenamiento: 
 
-sudo fdisk /ruta/almacenamiento # e.g: sudo fdisk /dev/sdb
+sudo fdisk /ruta/nuevo-almacenamiento # e.g: sudo fdisk /dev/sdb
 
 # Luego de eso veras un promt "Command (m for help)"
 
@@ -31,4 +31,28 @@ Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-xxxxxxxx, default xxxxxxxx):
 # ? Ver la tabla de particiones: 
 
 Command (m for help): p  # muestra como quedaran las particiones 
+
+# ? Guardar los cambios hechos: 
+
+Command (m for help): w  # Salvamos los cambios hechos, (no hay vuelta atras)
+
+
+
+# ? Dando formato a las particiones creadas: 
+
+lsblk  # ver las particiones montadas en el sistema 
+
+sudo mkfs.ext4 /ruta/nuevo-almacenamiento # e.g: sudo mkfs.ext4 /dev/sdb1
+
+
+# ? Montando la nueva particion para poder usar su espacio disponible: 
+
+cd /  # nos movemos al root 
+
+sudo mkdir scripts  # Creamos la carpeta donde queremos usar el nuevo espacio
+
+sudo mount /ruta/nuevo-almacenamiento /carpeta-usar  # e.g: sudo mount /dev/sdb1 /scripts
+
+
+
 

@@ -72,4 +72,4 @@ sudo vim /etc/fstab
 
 # Se agrega la particion creada, aqui un ejemplo de como luciria la edicion del archivo: 
 
-/dev/sdb1   /scripts    ext4    defaults    0     0
+/dev/sdb1   /scripts    ext4    defaults    0     0cd 

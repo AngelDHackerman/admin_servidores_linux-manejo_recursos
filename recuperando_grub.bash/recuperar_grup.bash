@@ -55,3 +55,17 @@ chroot /mnt/root /bin/bash  # con chroot, ganamos accesos de root al sistema que
 
 # lo que hagamos ahora sera en el sistema perdido y no en el liveBoot
 
+
+# ? Regeneramos el grub config 
+
+sudo dnf install 
+
+grub2-mkconfig -o /boot/grub2/grub.cfg  # todo: Esta opcion es para los sistemas de fedora
+
+grub2-install --boot-directory=/boot/ --recheck /dev/sda  # instalando y verificando la instalacion del grub
+
+ls /boot/grub2/  # verificamos que todo este montado en el grub
+
+exit
+
+# Reiniciamos la computadora y deberia funcionar 
